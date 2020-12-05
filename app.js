@@ -5,10 +5,8 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
-
-mongoose.connect('mongodb+srv://RifaKMalik:' 
-    + process.env.MONGO_ATLAS_PW + 
-    '@cluster0.acndi.mongodb.net/test?retryWrites=true&w=majority' ,
+const mongoConnect = "mongodb+srv://RifaKMalik:RifaKMalik@cluster0.acndi.mongodb.net/test?authSource=admin&replicaSet=atlas-ucjvht-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true"
+mongoose.connect(mongoConnect ,
     {
     useUnifiedTopology:true,
     useNewUrlParser : true,
